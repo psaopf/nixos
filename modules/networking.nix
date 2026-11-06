@@ -2,7 +2,7 @@
 {
   ### NETWORKING ###
 
-  networking.hostName = "nixos";
+  # networking.hostName is set per host in hosts/*/default.nix
   # networking.wireless.enable = true; # using NetworkManager instead
   networking.networkmanager.enable = true;
 

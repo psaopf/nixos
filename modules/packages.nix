@@ -9,7 +9,11 @@
   services.mullvad-vpn.enable = true;
 
   #Dev
-  users.users.p.extraGroups = ["kvm" "adbusers" ];
+  users.users.p.extraGroups = [ "kvm" "adbusers" ];
+
+  # 32-bit GL for Wine/Proton (desktop got this from gpu.nix; laptop had none)
+  hardware.graphics.enable = true;
+  hardware.graphics.enable32Bit = true;
 
   environment.systemPackages = with pkgs; [
     # terminal
