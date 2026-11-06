@@ -1,10 +1,9 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }:
 {
   ### GPU (NVIDIA RTX 3060 Ti) ###
 
-  # LTS kernel so the production driver branch builds (zen 7.2.x is too new).
-  # mkForce overrides the kernel set in boot.nix.
-  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_6_12;
+  # LTS kernel so the production driver branch builds (zen 7.2.x was too new).
+  boot.kernelPackages = pkgs.linuxPackages_6_12;
 
   services.xserver.videoDrivers = [ "nvidia" ];
 

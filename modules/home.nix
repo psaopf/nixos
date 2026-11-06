@@ -6,13 +6,13 @@
     programs.git = {
       enable = true;
       settings = {
-        user = {
-          name = "Your Name";       # TODO: update
-          email = "you@example.com"; # TODO: update
-        };
+        user.name = "psao";
+        # Email is kept out of the repo: put it in ~/.config/git/local
+        # (not managed by Nix), e.g.:  [user] email = you@example.com
         init.defaultBranch = "main";
         safe.directory = "/etc/nixos";
       };
+      includes = [ { path = "~/.config/git/local"; } ];
     };
 
     # ungoogled-chromium is installed and configured here rather than in
